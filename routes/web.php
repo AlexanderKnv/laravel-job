@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+Route::middleware('auth', 'admin')->group(function () {
+
+});
+
 Route::resource('categories', CategoryController::class);
 Route::resource('companies', CompanyController::class);
 Route::resource('jobs', JobController::class);
+Route::resource('users', UserController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

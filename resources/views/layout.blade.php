@@ -29,11 +29,23 @@
 <body class="bg-light">
 
     <div class="container">
+        <!-- <div class="d-flex justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <input type="submit" class="btn btn-outline-primary" value="Logout">
+                    </form>
+                </li>
+            </ul>
+        </div> -->
+
         <h1>@yield('title')</h1>
         <main>
             @yield('content')
         </main>
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
