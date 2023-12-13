@@ -23,9 +23,9 @@ Route::get('/', function () {
 
 
 
-Route::middleware('auth', 'admin')->group(function () {
+// Route::middleware('auth', 'admin')->group(function () {
 
-});
+// });
 
 Route::resource('categories', CategoryController::class);
 Route::resource('companies', CompanyController::class);
@@ -34,4 +34,4 @@ Route::resource('users', UserController::class);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
